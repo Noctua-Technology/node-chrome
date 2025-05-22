@@ -9,7 +9,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: node-chromium
+  IMAGE_NAME: /noctuatech/node-chromium
 
 
 jobs:
