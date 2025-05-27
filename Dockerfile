@@ -2,11 +2,20 @@ ARG NODE_VERSION="24"
 
 FROM node:${NODE_VERSION}-slim
 
-ENV CHROME_BIN=/usr/bin/chromium
-ENV CHROME_PATH=/usr/bin/chromium
-ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+ENV CHROME_PATH=/chrome/linux-136.0.7103.113/chrome-linux64/chrome
 
-RUN apt-get update && \
-    apt-get install -y chromium --no-install-recommends && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y libnss3 \
+    libatk1.0-0 \
+    libatk-bridge2.0-0 \
+    libcups2 \
+    libdrm-dev \
+    libxkbcommon-dev \
+    libxcomposite1 \
+    libxdamage1 \
+    libxfixes3 \
+    libxrandr2 \
+    libgbm1 \
+    libasound2 \
+    libgtk-3-0
+
+RUN npx @puppeteer/browsers install chrome@stable
