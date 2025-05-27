@@ -1,4 +1,6 @@
-FROM node:24-slim
+ARG NODE_VERSION="24"
+
+FROM node:${NODE_VERSION}-slim
 
 ENV CHROME_BIN=/usr/bin/chromium
 ENV CHROME_PATH=/usr/bin/chromium
