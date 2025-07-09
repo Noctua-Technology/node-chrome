@@ -4,7 +4,7 @@ FROM node:${NODE_VERSION}-alpine3.22
 
 ENV CHROME_PATH=/chrome/linux-136.0.7103.113/chrome-linux64/chrome
 
-RUN apt-get update && apt-get install -y libnss3 \
+RUN apt update && apt install -y libnss3 \
     libatk1.0-0 \
     libatk-bridge2.0-0 \
     libcups2 \
