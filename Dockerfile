@@ -1,6 +1,6 @@
 ARG NODE_VERSION="24"
 
-FROM node:${NODE_VERSION}-slim
+FROM node:${NODE_VERSION}-alpine3.22 
 
 ENV CHROME_PATH=/chrome/linux-136.0.7103.113/chrome-linux64/chrome
 
