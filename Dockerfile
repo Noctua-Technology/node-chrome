@@ -2,11 +2,13 @@ ARG NODE_VERSION="24"
 
 FROM node:${NODE_VERSION}-alpine3.22 
 
-# Install necessary packages for Puppeteer
+# Install necessary packages
 RUN apk add --no-cache \
     udev \
     ttf-freefont \
-    chromium
+    chromium \
+    node-chrome \
+    libreoffice
 
 # Set environment variables (optional but recommended)
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD="true"
